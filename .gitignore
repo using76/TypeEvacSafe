@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+runs/
+fields/
+cases/
+teacher/
+models/
+llama_prism/
+*.gguf
+*.npz
+*.sf
+*.smv
+.typesafe_key

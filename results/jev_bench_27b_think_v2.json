@@ -1,0 +1,517 @@
+{
+ "acc": 0.9666666666666667,
+ "rows": [
+  {
+   "name": "single_exit_clear",
+   "result": {
+    "mode": "evacuate",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.96,
+     "wait": 0.01,
+     "follow_crowd": 0.01,
+     "breakthrough": 0.01,
+     "shelter": 0.01
+    },
+    "survive": {
+     "likely": 0.96,
+     "unlikely": 0.04
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "near_exit_on_fire",
+   "result": {
+    "mode": "evacuate",
+    "target_exit": "X2",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.95,
+     "wait": 0.01,
+     "follow_crowd": 0.01,
+     "breakthrough": 0.01,
+     "shelter": 0.01
+    },
+    "target_exit": {
+     "X1": 0.1,
+     "X2": 0.8,
+     "X3": 0.1
+    },
+    "survive": {
+     "likely": 0.98,
+     "unlikely": 0.02
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "near_exit_crowded",
+   "result": {
+    "mode": "evacuate",
+    "target_exit": "X2",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.97,
+     "wait": 0.01,
+     "follow_crowd": 0.01,
+     "breakthrough": 0.01,
+     "shelter": 0.01
+    },
+    "target_exit": {
+     "X1": 0.12,
+     "X2": 0.88
+    },
+    "survive": {
+     "likely": 0.96,
+     "unlikely": 0.04
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "guardian_child_far",
+   "result": {
+    "mode": "escort",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.01,
+     "wait": 0.01,
+     "escort": 0.97,
+     "follow_crowd": 0.01,
+     "breakthrough": 0.01,
+     "shelter": 0.01
+    },
+    "survive": {
+     "likely": 0.5,
+     "unlikely": 0.5
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "guardian_child_collapsed",
+   "result": {
+    "mode": "escort",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.0,
+     "wait": 0.0,
+     "escort": 1.0,
+     "follow_crowd": 0.0,
+     "breakthrough": 0.0,
+     "shelter": 0.0
+    },
+    "survive": {
+     "likely": 0.5,
+     "unlikely": 0.5
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "guardian_child_outside",
+   "result": {
+    "mode": "evacuate",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.99,
+     "wait": 0.0,
+     "escort": 0.0,
+     "follow_crowd": 0.0,
+     "breakthrough": 0.0,
+     "shelter": 0.0
+    },
+    "survive": {
+     "likely": 0.97,
+     "unlikely": 0.03
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "firefighter_victim",
+   "result": {
+    "mode": "rescue",
+    "rescue_target": "V1",
+    "rescue_feasible": "yes",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.0,
+     "wait": 0.0,
+     "rescue": 1.0,
+     "follow_crowd": 0.0,
+     "breakthrough": 0.0,
+     "shelter": 0.0
+    },
+    "rescue_target": {
+     "V1": 0.5,
+     "none": 0.5
+    },
+    "rescue_feasible": {
+     "yes": 0.33,
+     "no": 0.33,
+     "insufficient": 0.33
+    },
+    "survive": {
+     "likely": 0.5,
+     "unlikely": 0.5
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "firefighter_no_victim",
+   "result": {
+    "mode": "evacuate",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.99,
+     "wait": 0.0,
+     "follow_crowd": 0.0,
+     "breakthrough": 0.0,
+     "shelter": 0.0
+    },
+    "survive": {
+     "likely": 0.86,
+     "unlikely": 0.14
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "adult_helps_collapsed",
+   "result": {
+    "mode": "rescue",
+    "rescue_target": "V1",
+    "rescue_feasible": "yes",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.0,
+     "wait": 0.0,
+     "rescue": 1.0,
+     "follow_crowd": 0.0,
+     "breakthrough": 0.0,
+     "shelter": 0.0
+    },
+    "rescue_target": {
+     "V1": 0.98,
+     "none": 0.02
+    },
+    "rescue_feasible": {
+     "yes": 0.91,
+     "no": 0.05,
+     "insufficient": 0.05
+    },
+    "survive": {
+     "likely": 0.89,
+     "unlikely": 0.11
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "adult_near_collapse_self",
+   "result": {
+    "mode": "evacuate",
+    "rescue_target": "none",
+    "rescue_feasible": "no",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.94,
+     "wait": 0.01,
+     "rescue": 0.01,
+     "follow_crowd": 0.01,
+     "breakthrough": 0.01,
+     "shelter": 0.01
+    },
+    "rescue_target": {
+     "V1": 0.0,
+     "none": 1.0
+    },
+    "rescue_feasible": {
+     "yes": 0.23,
+     "no": 0.55,
+     "insufficient": 0.23
+    },
+    "survive": {
+     "likely": 0.5,
+     "unlikely": 0.5
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "all_exits_fire",
+   "result": {
+    "mode": "shelter",
+    "target_exit": "X1",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.06,
+     "wait": 0.06,
+     "follow_crowd": 0.06,
+     "breakthrough": 0.06,
+     "shelter": 0.75
+    },
+    "target_exit": {
+     "X1": 1.0,
+     "X2": 0.0
+    },
+    "survive": {
+     "likely": 0.5,
+     "unlikely": 0.5
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "breakthrough_small_fire",
+   "result": {
+    "mode": "evacuate",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.2,
+     "wait": 0.2,
+     "follow_crowd": 0.2,
+     "breakthrough": 0.2,
+     "shelter": 0.2
+    },
+    "survive": {
+     "likely": 0.5,
+     "unlikely": 0.5
+    }
+   },
+   "ok": false
+  },
+  {
+   "name": "no_breakthrough_big_fire",
+   "result": {
+    "mode": "shelter",
+    "survive": "unlikely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.01,
+     "wait": 0.01,
+     "follow_crowd": 0.01,
+     "breakthrough": 0.01,
+     "shelter": 0.96
+    },
+    "survive": {
+     "likely": 0.0,
+     "unlikely": 1.0
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "elderly_two_exits",
+   "result": {
+    "mode": "evacuate",
+    "target_exit": "X2",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.99,
+     "wait": 0.0,
+     "follow_crowd": 0.0,
+     "breakthrough": 0.0,
+     "shelter": 0.0
+    },
+    "target_exit": {
+     "X1": 0.02,
+     "X2": 0.98
+    },
+    "survive": {
+     "likely": 0.97,
+     "unlikely": 0.03
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "smoke_vs_distance",
+   "result": {
+    "mode": "evacuate",
+    "target_exit": "X2",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.93,
+     "wait": 0.02,
+     "follow_crowd": 0.02,
+     "breakthrough": 0.02,
+     "shelter": 0.02
+    },
+    "target_exit": {
+     "X1": 0.05,
+     "X2": 0.95
+    },
+    "survive": {
+     "likely": 0.98,
+     "unlikely": 0.02
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "blocked_exit",
+   "result": {
+    "mode": "evacuate",
+    "target_exit": "X2",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.99,
+     "wait": 0.0,
+     "follow_crowd": 0.0,
+     "breakthrough": 0.0,
+     "shelter": 0.0
+    },
+    "target_exit": {
+     "X1": 0.07,
+     "X2": 0.93
+    },
+    "survive": {
+     "likely": 0.96,
+     "unlikely": 0.04
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "crowd_but_only_exit",
+   "result": {
+    "mode": "evacuate",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.97,
+     "wait": 0.01,
+     "follow_crowd": 0.01,
+     "breakthrough": 0.01,
+     "shelter": 0.01
+    },
+    "survive": {
+     "likely": 0.96,
+     "unlikely": 0.04
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "firefighter_victim_too_far_in_fire",
+   "result": {
+    "mode": "evacuate",
+    "rescue_target": "none",
+    "rescue_feasible": "no",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.17,
+     "wait": 0.17,
+     "rescue": 0.17,
+     "follow_crowd": 0.17,
+     "breakthrough": 0.17,
+     "shelter": 0.17
+    },
+    "rescue_target": {
+     "V1": 0.15,
+     "none": 0.85
+    },
+    "rescue_feasible": {
+     "yes": 0.0,
+     "no": 1.0,
+     "insufficient": 0.0
+    },
+    "survive": {
+     "likely": 0.5,
+     "unlikely": 0.5
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "two_clear_exits_pick_near",
+   "result": {
+    "mode": "evacuate",
+    "target_exit": "X1",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.99,
+     "wait": 0.0,
+     "follow_crowd": 0.0,
+     "breakthrough": 0.0,
+     "shelter": 0.0
+    },
+    "target_exit": {
+     "X1": 0.98,
+     "X2": 0.02
+    },
+    "survive": {
+     "likely": 0.95,
+     "unlikely": 0.05
+    }
+   },
+   "ok": true
+  },
+  {
+   "name": "queue_small_diff_keep_near",
+   "result": {
+    "mode": "evacuate",
+    "target_exit": "X1",
+    "survive": "likely"
+   },
+   "probs": {
+    "mode": {
+     "evacuate": 0.97,
+     "wait": 0.01,
+     "follow_crowd": 0.01,
+     "breakthrough": 0.01,
+     "shelter": 0.01
+    },
+    "target_exit": {
+     "X1": 0.99,
+     "X2": 0.01
+    },
+    "survive": {
+     "likely": 0.95,
+     "unlikely": 0.05
+    }
+   },
+   "ok": true
+  }
+ ]
+}

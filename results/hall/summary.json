@@ -1,0 +1,57 @@
+{
+ "llama": {
+  "adult": {
+   "n": 55,
+   "exit": 0.9999999403953552,
+   "down": 0.0,
+   "dead": 0.0
+  },
+  "child": {
+   "n": 10,
+   "exit": 1.0,
+   "down": 0.0,
+   "dead": 0.0
+  },
+  "elderly": {
+   "n": 15,
+   "exit": 1.0,
+   "down": 0.0,
+   "dead": 0.0
+  },
+  "guardian": {
+   "n": 10,
+   "exit": 1.0,
+   "down": 0.0,
+   "dead": 0.0
+  },
+  "firefighter": {
+   "n": 2,
+   "exit": 1.0,
+   "down": 0.0,
+   "dead": 0.0
+  },
+  "injured": {
+   "n": 10,
+   "exit": 0.5,
+   "down": 0.5,
+   "dead": 0.5
+  },
+  "rescued": 0,
+  "exit_all": 0.9509804248809814,
+  "down_all": 0.04901960864663124,
+  "dead_all": 0.04901960864663124,
+  "t_exit_p50": 25.70041847229004,
+  "fed_p50": 0.00036133156390860677,
+  "wall_s": 1081.0,
+  "steps": 1061,
+  "t_end": 106.1,
+  "decider_calls": 4,
+  "decider_seconds": 1021.9,
+  "decisions": 24,
+  "t_exit_p90": 37.60113525390625,
+  "exit_by_door": {
+   "SOUTH": 95,
+   "NORTH": 2
+  }
+ }
+}
