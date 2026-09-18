@@ -38,7 +38,7 @@ def main():
     ap.add_argument("--field", default="/home/work/BULC_DATA/evac_big/fields/HALL_30x30_2MW.npz")
     ap.add_argument("--every", type=float, default=2.0, help="PNG 프레임 간격(s)")
     ap.add_argument("--png_dir", default=None)
-    ap.add_argument("--t_max", type=float, default=0)
+    ap.add_argument("--t_max", type=float, default=0); ap.add_argument("--t_min", type=float, default=0.0)
     ap.add_argument("--mp4", default=None, help="파일명을 주면 mp4 도 만든다")
     ap.add_argument("--video_every", type=float, default=0.5)
     ap.add_argument("--fps", type=int, default=8)
@@ -60,7 +60,7 @@ def main():
     data = {m: load(os.path.join(a.out, "%s_positions.csv" % m)) for m in macros}
     times = sorted(set.intersection(*[set(d) for d in data.values()])) if len(data) > 1 else sorted(next(iter(data.values())))
     t_end = a.t_max or max(times)
-    frames = [t for t in times if t <= t_end and abs(t / a.every - round(t / a.every)) < 1e-6]
+    frames = [t for t in times if a.t_min <= t <= t_end and abs(t / a.every - round(t / a.every)) < 1e-6]
     print("판단층 %s · PNG %d장(%.1f s 간격) · 천장층 %.2f m %s" % (macros, len(frames), a.every, z_top, "있음" if KS_TOP is not None else "없음"))
 
     def panel(ax, m, t, small=False):
@@ -112,7 +112,7 @@ def main():
     plt.tight_layout(); plt.savefig(os.path.join(a.out, "sheet_%s.png" % macros[-1]), dpi=80); plt.close(fig)
 
     if a.mp4:
-        vt = [t for t in times if t <= t_end and abs(t / a.video_every - round(t / a.video_every)) < 1e-6]
+        vt = [t for t in times if a.t_min <= t <= t_end and abs(t / a.video_every - round(t / a.video_every)) < 1e-6]
         tmp = tempfile.mkdtemp(prefix="vid_")
         for k, t in enumerate(vt):
             draw(t, os.path.join(tmp, "f%05d.png" % k))

@@ -10,7 +10,7 @@
 <p align="center"><img src="results/hall/bonsai_vs_jev.gif" width="900" alt="Bonsai 2 27B vs TypeSafe Jev"></p>
 
 *30×30 m 홀, 2 MW 화원(별표), 100명(성인 55·보호자 10·어린이 10·노약자 15·부상자 10[보행불능 5] + 소방관 2).
-좌: 로컬 **Ternary Bonsai 2 27B**, 우: **TypeSafe Jev**. 회색은 호흡선(1.5 m) 연기, 옅은 남보라는 천장(2.88 m) 연기, 주황은 60 °C 이상.
+좌: 로컬 **Ternary Bonsai 2 27B (PQ2_0, 7.2 GB)**, 우: **TypeSafe Jev**. t=1 s 부터 0.5 s 간격 211 프레임, 10 fps(실시간 5배속). 회색은 호흡선(1.5 m) 연기, 옅은 남보라는 천장(2.88 m) 연기, 주황은 60 °C 이상.
 ○ 이동 · ▽ 쓰러짐 · × 사망. 전체 영상: [`results/hall/bonsai_vs_jev.mp4`](results/hall/bonsai_vs_jev.mp4)*
 
 ---
@@ -102,7 +102,7 @@ python typeevac/jev_bench.py --backend llama --url http://127.0.0.1:8083     # �
 ### (b) 소형 로컬 — Qwen3.5-4B (openjev 방식, 가장 빠름)
 
 ```bash
-huggingface-cli download unsloth/Qwen3.5-4B-GGUF Qwen3.5-4B-Q8_0.gguf --local-dir models/
+bash scripts/get_models.sh qwen4b        # Qwen3.5-4B-Q8_0.gguf (4.5 GB)
 bash scripts/serve_llm.sh 0 99 8082 models/Qwen3.5-4B-Q8_0.gguf
 ```
 
@@ -159,6 +159,7 @@ python typeevac/hall_frames.py --out runs/hall --macro llama,typesafe --every 2 
 - head fan-out·실행 가드: [browser-use/jev-ultrafast](https://github.com/browser-use/jev-ultrafast) (MIT)
 - 로컬 모델: [Ternary Bonsai 2 27B](https://huggingface.co/prism-ml/Ternary-Bonsai-2-27B-gguf) (Apache-2.0, PrismML) · [Qwen3.5-4B](https://huggingface.co/Qwen) (Apache-2.0)
 - 보행 동역학·FED: rust_evac (Meteor Simulation) · 화재장: FDS-GPU(BULC) / NIST FDS
+- 모델 파일 이름·내려받기: `models/README.md`, `scripts/get_models.sh`
 
 ## 라이선스와 특허
 
