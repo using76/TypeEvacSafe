@@ -94,13 +94,13 @@ def main():
     ap.add_argument("--time_scale", type=float, default=1.0); ap.add_argument("--max_steps", type=int, default=2400)
     ap.add_argument("--out", default="runs/scn"); ap.add_argument("--url", default="http://127.0.0.1:8081")
     ap.add_argument("--macro_dt", type=float, default=5.0, help="판단층 호출 주기(s) — 27B 는 15 권장")
-    ap.add_argument("--premove", type=float, default=5.0, help="출발 지연 상한(s)")
+    ap.add_argument("--premove", type=float, default=5.0, help="출발 지연 상한(s)"); ap.add_argument("--think", action="store_true")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     summary = {}
     for macro in a.macro.split(","):
-        kw = dict(url=a.url) if macro == "llama" else {}
+        kw = dict(url=a.url, think=a.think) if macro == "llama" else {}
         env, T, M, G, events, st = run_one(a.fields, a.case, macro, a.agents, a.seed, dev, a.time_scale, a.max_steps, kw, a.macro_dt if macro != "rule" else 5.0, a.premove)
         summary[macro] = st
         with open(os.path.join(a.out, "%s_events.jsonl" % macro), "w") as f:

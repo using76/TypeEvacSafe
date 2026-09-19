@@ -32,26 +32,26 @@
   },
   "injured": {
    "n": 10,
-   "exit": 0.5,
+   "exit": 0.699999988079071,
    "down": 0.5,
-   "dead": 0.5
+   "dead": 0.4000000059604645
   },
-  "rescued": 0,
-  "exit_all": 0.9509804248809814,
+  "rescued": 2,
+  "exit_all": 0.9705882668495178,
   "down_all": 0.04901960864663124,
-  "dead_all": 0.04901960864663124,
-  "t_exit_p50": 25.70041847229004,
-  "fed_p50": 0.00036133156390860677,
-  "wall_s": 1081.0,
-  "steps": 1061,
-  "t_end": 106.1,
-  "decider_calls": 4,
-  "decider_seconds": 1021.9,
-  "decisions": 24,
-  "t_exit_p90": 37.60113525390625,
+  "dead_all": 0.03921568766236305,
+  "t_exit_p50": 26.10044288635254,
+  "fed_p50": 0.00037700505345128477,
+  "wall_s": 494.5,
+  "steps": 1392,
+  "t_end": 139.2,
+  "decider_calls": 8,
+  "decider_seconds": 416.7,
+  "decisions": 58,
+  "t_exit_p90": 96.85472869873047,
   "exit_by_door": {
-   "SOUTH": 95,
-   "NORTH": 2
+   "SOUTH": 96,
+   "NORTH": 3
   }
  }
 }

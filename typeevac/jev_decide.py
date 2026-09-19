@@ -299,7 +299,9 @@ def merge_perms(logits_list, perms, n):
 
 # ---------------------------------------------------------------- 결정기
 class JevDecider:
-    def __init__(self, backend="llama", lang="en", n_perm=1, think=True, **kw):
+    def __init__(self, backend="llama", lang="en", n_perm=1, think=False, **kw):
+        """think=False 가 기본 — openjev 식 즉답 판독. 27B Q4 처럼 즉답이 무너지는 모델에서만 think=True.
+        (실측: 생각 모드는 head 당 수백 토큰을 생성해 결정당 수십 초가 된다)"""
         if backend == "typesafe": self.be = TypeSafeBackend(**kw)
         elif backend == "llama": self.be = LlamaBackend(think=think, **kw)
         else: self.be = HFBackend(**kw)

@@ -96,7 +96,7 @@ def main():
     ap.add_argument("--macro", default="rule,llama"); ap.add_argument("--seed", type=int, default=0)
     ap.add_argument("--macro_dt", type=float, default=30.0); ap.add_argument("--premove", type=float, default=15.0)
     ap.add_argument("--out", default="runs/hall_test"); ap.add_argument("--url", default="http://127.0.0.1:8081"); ap.add_argument("--threads", type=int, default=8)
-    ap.add_argument("--spawn", default="5,10,2.5,9")
+    ap.add_argument("--spawn", default="5,10,2.5,9"); ap.add_argument("--think", action="store_true", help="로컬 모델을 생각 모드로(느리다; 27B Q4 에만 필요)")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     dev = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -113,7 +113,7 @@ def main():
     json.dump(roster, open(os.path.join(a.out, "roster.json"), "w"), indent=1)
     summary = {}
     for macro in a.macro.split(","):
-        kw = dict(url=a.url, threads=a.threads) if macro == "llama" else (dict(threads=a.threads) if macro == "typesafe" else {})
+        kw = dict(url=a.url, threads=a.threads, think=a.think) if macro == "llama" else (dict(threads=a.threads) if macro == "typesafe" else {})
         env, rows, T, st = run(a.fields, a.case, macro, roster, a.seed, dev, a.macro_dt, a.premove, kw,
                                spawn=[float(v) for v in a.spawn.split(",")])
         with open(os.path.join(a.out, "%s_positions.csv" % macro), "w", newline="") as f:

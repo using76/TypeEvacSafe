@@ -1,0 +1,527 @@
+[
+ {
+  "role": "guardian",
+  "sex": "male",
+  "age": 40,
+  "guardian_of": 10
+ },
+ {
+  "role": "guardian",
+  "sex": "male",
+  "age": 43,
+  "guardian_of": 11
+ },
+ {
+  "role": "guardian",
+  "sex": "male",
+  "age": 49,
+  "guardian_of": 12
+ },
+ {
+  "role": "guardian",
+  "sex": "male",
+  "age": 28,
+  "guardian_of": 13
+ },
+ {
+  "role": "guardian",
+  "sex": "male",
+  "age": 31,
+  "guardian_of": 14
+ },
+ {
+  "role": "guardian",
+  "sex": "female",
+  "age": 31,
+  "guardian_of": 15
+ },
+ {
+  "role": "guardian",
+  "sex": "female",
+  "age": 35,
+  "guardian_of": 16
+ },
+ {
+  "role": "guardian",
+  "sex": "female",
+  "age": 37,
+  "guardian_of": 17
+ },
+ {
+  "role": "guardian",
+  "sex": "female",
+  "age": 47,
+  "guardian_of": 18
+ },
+ {
+  "role": "guardian",
+  "sex": "female",
+  "age": 49,
+  "guardian_of": 19
+ },
+ {
+  "role": "child",
+  "sex": "female",
+  "age": 6
+ },
+ {
+  "role": "child",
+  "sex": "male",
+  "age": 8
+ },
+ {
+  "role": "child",
+  "sex": "female",
+  "age": 10
+ },
+ {
+  "role": "child",
+  "sex": "male",
+  "age": 4
+ },
+ {
+  "role": "child",
+  "sex": "female",
+  "age": 4
+ },
+ {
+  "role": "child",
+  "sex": "male",
+  "age": 8
+ },
+ {
+  "role": "child",
+  "sex": "female",
+  "age": 6
+ },
+ {
+  "role": "child",
+  "sex": "male",
+  "age": 5
+ },
+ {
+  "role": "child",
+  "sex": "female",
+  "age": 10
+ },
+ {
+  "role": "child",
+  "sex": "male",
+  "age": 10
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 44
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 37
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 57
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 45
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 33
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 28
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 29
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 40
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 36
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 25
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 35
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 20
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 38
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 55
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 44
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 49
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 39
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 39
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 34
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 59
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 52
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 21
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 29
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 52
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 51
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 30
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 43
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 55
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 31
+ },
+ {
+  "role": "adult",
+  "sex": "male",
+  "age": 48
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 54
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 20
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 20
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 56
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 25
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 58
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 37
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 35
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 24
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 51
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 21
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 21
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 59
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 55
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 58
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 31
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 38
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 47
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 20
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 34
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 55
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 32
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 40
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 31
+ },
+ {
+  "role": "adult",
+  "sex": "female",
+  "age": 24
+ },
+ {
+  "role": "elderly",
+  "sex": "female",
+  "age": 74
+ },
+ {
+  "role": "elderly",
+  "sex": "male",
+  "age": 72
+ },
+ {
+  "role": "elderly",
+  "sex": "female",
+  "age": 83
+ },
+ {
+  "role": "elderly",
+  "sex": "male",
+  "age": 71
+ },
+ {
+  "role": "elderly",
+  "sex": "female",
+  "age": 80
+ },
+ {
+  "role": "elderly",
+  "sex": "male",
+  "age": 72
+ },
+ {
+  "role": "elderly",
+  "sex": "female",
+  "age": 76
+ },
+ {
+  "role": "elderly",
+  "sex": "male",
+  "age": 82
+ },
+ {
+  "role": "elderly",
+  "sex": "female",
+  "age": 83
+ },
+ {
+  "role": "elderly",
+  "sex": "male",
+  "age": 71
+ },
+ {
+  "role": "elderly",
+  "sex": "female",
+  "age": 83
+ },
+ {
+  "role": "elderly",
+  "sex": "male",
+  "age": 81
+ },
+ {
+  "role": "elderly",
+  "sex": "female",
+  "age": 84
+ },
+ {
+  "role": "elderly",
+  "sex": "male",
+  "age": 85
+ },
+ {
+  "role": "elderly",
+  "sex": "female",
+  "age": 73
+ },
+ {
+  "role": "injured",
+  "sex": "male",
+  "age": 25
+ },
+ {
+  "role": "injured",
+  "sex": "male",
+  "age": 56
+ },
+ {
+  "role": "injured",
+  "sex": "male",
+  "age": 30
+ },
+ {
+  "role": "injured",
+  "sex": "male",
+  "age": 55
+ },
+ {
+  "role": "injured",
+  "sex": "male",
+  "age": 25
+ },
+ {
+  "role": "injured",
+  "sex": "female",
+  "age": 59,
+  "cannot_walk": true
+ },
+ {
+  "role": "injured",
+  "sex": "female",
+  "age": 54,
+  "cannot_walk": true
+ },
+ {
+  "role": "injured",
+  "sex": "female",
+  "age": 28,
+  "cannot_walk": true
+ },
+ {
+  "role": "injured",
+  "sex": "female",
+  "age": 59,
+  "cannot_walk": true
+ },
+ {
+  "role": "injured",
+  "sex": "female",
+  "age": 38,
+  "cannot_walk": true
+ },
+ {
+  "role": "firefighter",
+  "sex": "male",
+  "age": 44
+ },
+ {
+  "role": "firefighter",
+  "sex": "male",
+  "age": 35
+ }
+]
