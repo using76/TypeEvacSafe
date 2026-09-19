@@ -226,8 +226,9 @@ $$\sigma(V)=\frac{\pi}{2}\,\mathrm{clip}\!\Big(\frac{10-V}{10-1},0,1\Big),\qquad
 
 | 항목 | 규칙 매크로 | Qwen3.8-27B(생각) | **Bonsai 2 27B(로컬 즉답)** | **TypeSafe Jev** |
 |---|---:|---:|---:|---:|
-| **결정당 시간** | — | ~35 s | **7.2 s** | **0.14 s** |
+| **결정당 시간**(시뮬레이션 실측) | — | ~35 s | **7.2 s** | **0.14 s** |
 | 판단 수 · 총 시간 | — | 30 · 1,050 s | 58 · 417 s | 42 · 5.7 s |
+| 결정당 head 수 · head당 시간 | — | 5.9 · ~6 s | 5.9 · 1.22 s | 한 요청 |
 | 탈출률 | 0.97 | 0.96 | 0.971 | 0.971 |
 | 사망률 | 0.039 | 0.049 | **0.029** | **0.020** |
 | 보행불능자 5명 구조 | 2 | 1 | 2 | **5** |
@@ -243,11 +244,13 @@ $$\sigma(V)=\frac{\pi}{2}\,\mathrm{clip}\!\Big(\frac{10-V}{10-1},0,1\Big),\qquad
 - Bonsai 는 로컬에서 그에 근접한다 — API 없이 7.2 GB 로 돌면서 결정이 가장 다양하고(엔트로피 0.50), 위험한 출구에서 더 나은 쪽으로 바꾼 비율이 가장 높다(0.54).
 - 획일적 판단은 사람을 놓친다 — Qwen 27B 생각 모드는 전원에게 `evacuate` 를 지시했고 구조 1건에 그쳤다.
 
+**4.1 과 4.2 의 결정당 시간이 다른 이유** — 같은 백엔드라도 조건이 다르다. 시뮬레이션(4.1)은 한 결정에 head 5.9개(mode · target_exit · rescue_target · rescue_feasible · pace · survive)를 묻고 증거가 길며(출구·위험자·가족 항목, 1,000~1,600 토큰) 4스레드 동시 요청으로 돌렸다. 벤치(4.2)는 head 3.8개, 약 890 토큰, 직렬이다. **head당 시간으로 환산하면 Bonsai 1.22 s(시뮬) 대 0.47 s(벤치)** 이고, 차이는 증거 길이(약 1.6배)와 동시 요청 손실(약 1.8배)로 설명된다. 결정당 값은 head 수를 곱한 것이다: 0.47 × 3.8 = 1.78 s, 1.22 × 5.9 = 7.2 s. Jev 도 같은 이유로 0.085 s(벤치) → 0.136 s(시뮬)이다.
+
 ### 4.2 판단 백엔드 정확도와 속도
 
-A100 80 GB 1장 · 저작 벤치 20건(30 판정) · 지연은 서로 다른 상황 20개를 연속 질의해 측정. 한 사람의 결정 = head 4~6개.
+A100 80 GB 1장 · 저작 벤치 20건(30 판정) · 지연은 서로 다른 상황 20개를 **직렬**로 질의해 측정(약 890 토큰, 결정당 head 3.8개). 시뮬레이션 조건의 값은 4.1 표를 본다.
 
-| 백엔드 | 크기 | 판독 | 정확도 | head당 | **결정당** |
+| 백엔드 | 크기 | 판독 | 정확도 | head당 | **결정당**(벤치, head 3.8개) |
 |---|---:|---|---:|---:|---:|
 | **TypeSafe Jev** | — | 타입 확률 | 0.93 (28/30) | — | **0.085 s** |
 | **Qwen3.5-4B Q8_0** | 4.5 GB | 즉답 | 0.70 (21/30) | 0.128 s | **0.487 s** |
@@ -549,8 +552,9 @@ Evacuation rate lands at 0.96–0.99 for every decision layer and discriminates 
 
 | metric | rule macro | Qwen3.8-27B (thinking) | **Bonsai 2 27B (local, direct)** | **TypeSafe Jev** |
 |---|---:|---:|---:|---:|
-| **per-decision latency** | — | ~35 s | **7.2 s** | **0.14 s** |
+| **per-decision latency** (measured in simulation) | — | ~35 s | **7.2 s** | **0.14 s** |
 | decisions · total time | — | 30 · 1,050 s | 58 · 417 s | 42 · 5.7 s |
+| heads per decision · per head | — | 5.9 · ~6 s | 5.9 · 1.22 s | one request |
 | evacuated | 0.97 | 0.96 | 0.971 | 0.971 |
 | died | 0.039 | 0.049 | **0.029** | **0.020** |
 | non-ambulatory rescued (of 5) | 2 | 1 | 2 | **5** |
@@ -566,11 +570,13 @@ Evacuation rate lands at 0.96–0.99 for every decision layer and discriminates 
 - Bonsai comes close, locally — 7.2 GB, no API, the most individualised decisions (entropy 0.50) and the highest rate of switching away from a hazardous exit (0.54).
 - Uniform decisions cost lives — Qwen 27B in thinking mode told everyone to `evacuate` and rescued one.
 
+**Why the per-decision times in 4.1 and 4.2 differ** — same backends, different conditions. In simulation (4.1) a decision asks 5.9 heads (mode · target_exit · rescue_target · rescue_feasible · pace · survive), the evidence is long (exits, victims, family; 1,000–1,600 tokens) and requests ran on 4 concurrent threads. The bench (4.2) asks 3.8 heads on ~890 tokens, serially. **Per head, Bonsai takes 1.22 s in simulation vs 0.47 s on the bench**; the gap is explained by evidence length (~1.6×) and the concurrency penalty (~1.8×). Per-decision figures are per-head × heads: 0.47 × 3.8 = 1.78 s, 1.22 × 5.9 = 7.2 s. Jev shows the same pattern, 0.085 s (bench) → 0.136 s (simulation).
+
 ### 4.2 Backend accuracy and speed
 
-One A100 80 GB · 20 authored bench cases (30 judgments) · latency over 20 distinct situations, never repeating a prompt. One decision = 4–6 heads.
+One A100 80 GB · 20 authored bench cases (30 judgments) · latency over 20 distinct situations queried **serially** (~890 tokens, 3.8 heads per decision). For simulation conditions see table 4.1.
 
-| backend | size | readout | accuracy | per head | **per decision** |
+| backend | size | readout | accuracy | per head | **per decision** (bench, 3.8 heads) |
 |---|---:|---|---:|---:|---:|
 | **TypeSafe Jev** | — | typed probs | 0.93 (28/30) | — | **0.085 s** |
 | **Qwen3.5-4B Q8_0** | 4.5 GB | direct | 0.70 (21/30) | 0.128 s | **0.487 s** |
