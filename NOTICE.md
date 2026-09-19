@@ -23,6 +23,6 @@ TypeEvacSafe © 2026 Meteor Simulation. All rights reserved.
 | Qwen3.5 / Qwen3.8 (가중치) | Alibaba Qwen | Apache-2.0 |
 | llama.cpp / PrismML llama.cpp 포크 | ggml-org / PrismML | MIT |
 | 보행 동역학·FED 모델 | rust_evac (Meteor Simulation) | 사내 |
-| 화재 해석 | FDS-GPU (BULC, Meteor Simulation) · NIST FDS | 사내 / 퍼블릭 도메인 |
+| 화재 해석 | BULC (bulc.msimul.com, Meteor Simulation) | 사내 / 퍼블릭 도메인 |
 
 모델 가중치와 API 는 각자의 라이선스·약관을 따른다.
